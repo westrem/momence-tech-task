@@ -14,7 +14,19 @@
     "resolveJsonModule": true,
     "isolatedModules": true,
     "noEmit": true,
-    "jsx": "react-jsx"
+    "jsx": "react-jsx",
+    "allowUnreachableCode": false,
+    "allowUnusedLabels": false,
+    "newLine": "lf",
+    "noFallthroughCasesInSwitch": true,
+    "noErrorTruncation": true,
+    "noImplicitAny": true,
+    "noImplicitOverride": true,
+    "noPropertyAccessFromIndexSignature": true,
+    "noImplicitReturns": true,
+    "noImplicitThis": true,
+    "noUnusedLocals": true,
+    "noUnusedParameters": true
   },
   "include": ["src"],
   "references": [{ "path": "./tsconfig.node.json" }]
