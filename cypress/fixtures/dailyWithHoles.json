@@ -1,0 +1,212 @@
+[
+  {
+    "country": "Australia",
+    "currency": "dollar",
+    "amount": 1,
+    "code": "AUD",
+    "rate": 14.622
+  },
+  {
+    "country": "Bulgaria",
+    "currency": "lev",
+    "amount": 1,
+    "code": "BGN",
+    "rate": 12.109
+  },
+  {
+    "country": "Canada",
+    "currency": "dollar",
+    "amount": 1,
+    "code": "CAD",
+    "rate": 15.975
+  },
+  {
+    "country": "China",
+    "currency": "renminbi",
+    "amount": 1,
+    "code": "CNY",
+    "rate": 3.208
+  },
+  {
+    "country": "Denmark",
+    "currency": "krone",
+    "amount": 1,
+    "code": "DKK",
+    "rate": 3.178
+  },
+  {
+    "country": "EMU",
+    "currency": "euro",
+    "amount": 1,
+    "code": "EUR",
+    "rate": 23.68
+  },
+  {
+    "country": "Hongkong",
+    "currency": "dollar",
+    "amount": 1,
+    "code": "HKD",
+    "rate": 2.807
+  },
+  {
+    "country": "Hungary",
+    "currency": "forint",
+    "amount": 100,
+    "code": "HUF",
+    "rate": 6.121
+  },
+  {
+    "country": "Iceland",
+    "currency": "krona",
+    "amount": 100,
+    "code": "ISK",
+    "rate": 15.776
+  },
+  {
+    "country": "IMF",
+    "currency": "SDR",
+    "amount": 1,
+    "code": "XDR",
+    "rate": 29.565
+  },
+  {
+    "country": "India",
+    "currency": "rupee",
+    "amount": 100,
+    "code": "INR",
+    "rate": 26.736
+  },
+  {
+    "country": "Indonesia",
+    "currency": "rupiah",
+    "amount": 1000,
+    "code": "IDR",
+    "rate": 1.454
+  },
+  {
+    "country": "Israel",
+    "currency": "new shekel",
+    "amount": 1,
+    "code": "ILS",
+    "rate": 6.111
+  },
+  {
+    "country": "Japan",
+    "currency": "yen",
+    "amount": 100,
+    "code": "JPY",
+    "rate": 16.924
+  },
+  {
+    "country": "Malaysia",
+    "currency": "ringgit",
+    "amount": 1,
+    "code": "MYR",
+    "rate": 4.977
+  },
+  {
+    "country": "Mexico",
+    "currency": "peso",
+    "amount": 1,
+    "code": "MXN",
+    "rate": 1.179
+  },
+  {
+    "country": "New Zealand",
+    "currency": "dollar",
+    "amount": 1,
+    "code": "NZD",
+    "rate": 13.661
+  },
+  {
+    "country": "Norway",
+    "currency": "krone",
+    "amount": 1,
+    "code": "NOK",
+    "rate": 2.094
+  },
+  {
+    "country": "Philippines",
+    "currency": "peso",
+    "amount": 100,
+    "code": "PHP",
+    "rate": 40.532
+  },
+  {
+    "country": "Poland",
+    "currency": "zloty",
+    "amount": 1,
+    "code": "PLN",
+    "rate": 5.054
+  },
+  {
+    "country": "Romania",
+    "currency": "leu",
+    "amount": 1,
+    "code": "RON",
+    "rate": 4.803
+  },
+  {
+    "country": "Singapore",
+    "currency": "dollar",
+    "amount": 1,
+    "code": "SGD",
+    "rate": 16.52
+  },
+  {
+    "country": "South Africa",
+    "currency": "rand",
+    "amount": 1,
+    "code": "ZAR",
+    "rate": 1.21
+  },
+  {
+    "country": "South Korea",
+    "currency": "won",
+    "amount": 100,
+    "code": "KRW",
+    "rate": 1.69
+  },
+  {
+    "country": "Sweden",
+    "currency": "krona",
+    "amount": 1,
+    "code": "SEK",
+    "rate": 2.112
+  },
+  {
+    "country": "Switzerland",
+    "currency": "franc",
+    "amount": 1,
+    "code": "CHF",
+    "rate": 23.982
+  },
+  {
+    "country": "Thailand",
+    "currency": "baht",
+    "amount": 100,
+    "code": "THB",
+    "rate": 64.45
+  },
+  {
+    "country": "Turkey",
+    "currency": "lira",
+    "amount": 1,
+    "code": "TRY",
+    "rate": 1.156
+  },
+  {
+    "country": "United Kingdom",
+    "currency": "pound",
+    "amount": 1,
+    "code": "GBP",
+    "rate": 26.918
+  },
+  {
+    "country": "USA",
+    "currency": "dollar",
+    "amount": 1,
+    "code": "USD",
+    "rate": 22.037
+  }
+]

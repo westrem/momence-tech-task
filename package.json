@@ -12,7 +12,7 @@
     "lint:ts": "./node_modules/.bin/tsc --noemit",
     "lint:eslint": "./node_modules/.bin/eslint src --ignore-path .gitignore --ext .ts,.tsx --cache --cache-location .cache/eslint/ --max-warnings 0",
     "fix:eslint": "./node_modules/.bin/eslint src/** --ignore-path .gitignore --ext .ts,.tsx --cache --cache-location .cache/eslint/ --fix",
-    "cypress:open": "./node_modules/.bin/.bin/cypress open",
+    "cypress:open": "./node_modules/.bin/cypress open",
     "cypress:run": "./node_modules/.bin/cypress run",
     "test:ci": "yarn cypress:run"
   },
