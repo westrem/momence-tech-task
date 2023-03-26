@@ -53,15 +53,15 @@ function parseRecord(record: string): CNBExchangeRecord {
   }
 }
 
-function isRecord(record: any): record is CNBExchangeRecord {
+function isRecord(record: unknown): record is CNBExchangeRecord {
   return (
     typeof record === 'object' &&
     !!record &&
-    record.hasOwnProperty('country') &&
-    record.hasOwnProperty('currency') &&
-    record.hasOwnProperty('amount') &&
-    record.hasOwnProperty('code') &&
-    record.hasOwnProperty('rate')
+    Object.hasOwn(record, 'country') &&
+    Object.hasOwn(record, 'currency') &&
+    Object.hasOwn(record, 'amount') &&
+    Object.hasOwn(record, 'code') &&
+    Object.hasOwn(record, 'rate')
   )
 }
 
@@ -83,7 +83,8 @@ function parse(input: string): CNBExchangeRecord[] {
       try {
         return parseRecord(record)
       } catch (e) {
-        if (e instanceof TypeError) console.log(e.message, 'skipping', `record:`, record)
+        // eslint-disable-next-line no-console
+        if (e instanceof TypeError) console.error(e.message, 'skipping', `record:`, record)
         return false
       }
     })
