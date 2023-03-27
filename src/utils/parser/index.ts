@@ -80,6 +80,8 @@ function parse(input: string): CNBExchangeRecord[] {
 
   return records
     .map((record) => {
+      if (!record) return false
+
       try {
         return parseRecord(record)
       } catch (e) {
