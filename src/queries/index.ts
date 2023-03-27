@@ -1,12 +1,11 @@
 import { useQuery } from 'react-query'
-import { format, set, isAfter } from 'date-fns'
+import { set, isAfter } from 'date-fns'
 
+import { now, todayFormatted } from '../utils/date'
 import parser from '../utils/parser'
 
 import * as CNB from '../api/cnb'
 
-const now = Date.now()
-const todayFormatted = format(now, 'dd.MM.yyyy')
 const todayAt230PM = set(now, {
   hours: 14,
   minutes: 30,

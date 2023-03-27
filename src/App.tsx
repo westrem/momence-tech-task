@@ -1,20 +1,23 @@
+import { Container } from '@chakra-ui/react'
+
+import { Title } from './components'
+import { Exchange } from './scenes'
+
 import { useDailyFx } from './queries'
 
 function App() {
   const { data, isLoading, isError, isSuccess } = useDailyFx()
 
   return (
-    <div className='App'>
-      <h1>Hello Momence</h1>
-      {isLoading && <p>Loading...</p>}
-      {isError && <p>Error</p>}
-      {isSuccess && (
-        <>
-          <p>Loaded</p>
-          <p>{JSON.stringify(data, null, 2)}</p>
-        </>
-      )}
-    </div>
+    <Container
+      maxW='490px'
+      pt={16}
+      centerContent
+    >
+      <Title />
+
+      <Exchange ready={isSuccess} />
+    </Container>
   )
 }
 
