@@ -1,6 +1,9 @@
 import { Text, Input, InputGroup, InputRightAddon, Stack, Skeleton, chakra } from '@chakra-ui/react'
 
 interface Props {
+  /**
+   * @default false
+   */
   loading?: boolean
 
   /**

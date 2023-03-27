@@ -16,3 +16,12 @@
 label {
   cursor: pointer;
 }
+
+td[data-is-numeric],
+th[data-is-numeric] {
+  text-align: right;
+}
+
+td[data-is-numeric] {
+  font-variant-numeric: tabular-nums;
+}
