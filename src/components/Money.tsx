@@ -1,4 +1,23 @@
 import { Heading, Text, Stack } from '@chakra-ui/react'
+import styled from 'styled-components'
+
+import arrow from '../assets/arrows_triple_down.png'
+
+const Wrapper = styled.div`
+  position: relative;
+  overflow: visible;
+  
+  &::before {
+    display: block;
+    position: absolute;
+    width: 30px;
+    height: 38px;
+    left: calc(50% - 15px);
+    top: -64px;
+    content: "";
+    background: transparent url(${arrow}) 0 0 no-repeat;
+  }
+`
 
 interface Props {
   ready?: boolean
@@ -21,24 +40,26 @@ function Money(props: Props) {
   if (!ready) return null
 
   return (
-    <Stack
-      spacing={1}
-      align='center'
-    >
-      <Heading
-        as='h2'
-        size='3xl'
+    <Wrapper>
+      <Stack
+        spacing={1}
+        align='center'
       >
-        {value}
-      </Heading>
-      <Text
-        fontSize='md'
-        color='gray.400'
-        m={0}
-      >
-        {snippet}
-      </Text>
-    </Stack>
+        <Heading
+          as='h2'
+          size='3xl'
+        >
+          {value}
+        </Heading>
+        <Text
+          fontSize='md'
+          color='gray.400'
+          m={0}
+        >
+          {snippet}
+        </Text>
+      </Stack>
+    </Wrapper>
   )
 }
 

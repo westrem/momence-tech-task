@@ -1,9 +1,8 @@
 import { useState } from 'react'
-import { Stack, Link } from '@chakra-ui/react'
+import { Stack } from '@chakra-ui/react'
 import { CurrencyISOCode } from '@westrem/currency.info'
-import { Link as ReactLink } from 'react-router-dom'
 
-import { MoneyInput, Money, CurrencySelect, Disclaimer, InfoNav } from '../components'
+import { MoneyInput, Money, CurrencySelect, Disclaimer, InfoNav, NavLink } from '../components'
 import { useFxContext } from '../contexts/fx'
 import { exchangeCZK } from '../utils/fx'
 import { formatMoney } from '../utils/money'
@@ -56,13 +55,7 @@ function Exchange() {
 
       <InfoNav position='bottom'>
         <Disclaimer />
-        <Link
-          fontSize='xs'
-          as={ReactLink}
-          to={linkTo.rates()}
-        >
-          View rates
-        </Link>
+        <NavLink to={linkTo.rates()}>View rates</NavLink>
       </InfoNav>
     </Stack>
   )

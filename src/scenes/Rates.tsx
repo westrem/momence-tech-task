@@ -1,7 +1,4 @@
-import { Link } from '@chakra-ui/react'
-import { Link as ReactLink } from 'react-router-dom'
-
-import { FxTable, Disclaimer, InfoNav } from '../components'
+import { FxTable, Disclaimer, InfoNav, NavLink } from '../components'
 
 import { useFxContext } from '../contexts/fx'
 import { linkTo } from '../utils/routing'
@@ -12,13 +9,12 @@ function Rates() {
   return (
     <>
       <InfoNav position='top'>
-        <Link
-          as={ReactLink}
+        <NavLink
+          backlink
           to={linkTo.root()}
-          fontSize='xs'
         >
           Back to Exchange
-        </Link>
+        </NavLink>
         <Disclaimer />
       </InfoNav>
 
