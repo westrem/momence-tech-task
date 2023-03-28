@@ -1,11 +1,18 @@
 import { Text, Input, InputGroup, InputRightAddon, Stack, Skeleton, chakra } from '@chakra-ui/react'
+import { NumericFormat } from 'react-number-format'
 import styled from 'styled-components'
 
 import arrow from '../assets/arrow_bolt.png'
 
+import { decimalSeparator } from '../utils/money'
+
 const commonWrapperStyling = {
   spacing: 2,
 }
+
+// -------------------------------------------------------------------------------------------------------------------
+// Helper components
+// -------------------------------------------------------------------------------------------------------------------
 
 const Wrapper = styled.div`
   position: relative;
@@ -22,6 +29,22 @@ const Wrapper = styled.div`
     background: transparent url(${arrow}) 0 0 no-repeat;
   }
 `
+
+const ChakraInput = (props: Record<PropertyKey, unknown>) => (
+  <InputGroup size='lg'>
+    <Input
+      {...props}
+      placeholder={`420${decimalSeparator}69`}
+      id='moneyIn'
+      autoFocus
+    />
+    <InputRightAddon>CZK</InputRightAddon>
+  </InputGroup>
+)
+
+// -------------------------------------------------------------------------------------------------------------------
+// Main component
+// -------------------------------------------------------------------------------------------------------------------
 
 interface Props {
   /**
@@ -64,16 +87,18 @@ function MoneyInput(props: Props) {
           <Text fontSize='md'>How much CZK do you want to exchange?</Text>
         </chakra.label>
 
-        <InputGroup size='lg'>
-          <Input
-            placeholder='420,69'
-            value={value}
-            onChange={(evt) => onChange(evt.target.value)}
-            id='moneyIn'
-            autoFocus
-          />
-          <InputRightAddon>CZK</InputRightAddon>
-        </InputGroup>
+        <NumericFormat
+          value={value}
+          customInput={ChakraInput}
+          valueIsNumericString
+          onValueChange={(values) => {
+            onChange(values.value)
+          }}
+          allowNegative={false}
+          allowedDecimalSeparators={[decimalSeparator]}
+          decimalScale={2}
+          decimalSeparator={decimalSeparator}
+        />
       </Stack>
     </Wrapper>
   )

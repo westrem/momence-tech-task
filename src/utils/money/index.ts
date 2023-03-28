@@ -1,11 +1,13 @@
 import { currenciesMap, CurrencyISOCode } from '@westrem/currency.info'
 
+// @ts-expect-error
+const usersLocale: string = window.navigator.userLanguage ?? window.navigator.language
+
 // https://github.com/westrem/currency.info#formatting-monetary-values
 const formatMoney = (
   valueInMajorUnits: number,
   currencyISOCode: CurrencyISOCode,
-  // @ts-expect-error
-  locale: string = window.navigator.userLanguage ?? window.navigator.language,
+  locale = usersLocale,
 ) =>
   Intl.NumberFormat(locale, {
     currency: currencyISOCode,
@@ -15,4 +17,22 @@ const formatMoney = (
     maximumFractionDigits: currenciesMap[currencyISOCode].defaultFractionDigits,
   }).format(valueInMajorUnits)
 
-export { formatMoney }
+function getNumberFormattingOptions(): {
+  thousandsSeparator: string
+  decimalSeparator: string
+} {
+  const formatted = new Intl.NumberFormat(usersLocale, {
+    style: 'decimal',
+  })
+    .format(12345.12)
+    .replace(/\d/g, '')
+
+  return {
+    thousandsSeparator: formatted[0],
+    decimalSeparator: formatted[1],
+  }
+}
+
+const { thousandsSeparator, decimalSeparator } = getNumberFormattingOptions()
+
+export { formatMoney, thousandsSeparator, decimalSeparator }
