@@ -6,7 +6,7 @@ import arrow from '../assets/arrow_bolt.png'
 
 import { decimalSeparator } from '../utils/money'
 
-const commonWrapperStyling = {
+const commonStackProps = {
   spacing: 2,
 }
 
@@ -67,7 +67,7 @@ function MoneyInput(props: Props) {
     return (
       <Wrapper>
         <Stack
-          {...commonWrapperStyling}
+          {...commonStackProps}
           minW='305px'
         >
           <Skeleton height='24px' />
@@ -78,7 +78,7 @@ function MoneyInput(props: Props) {
 
   return (
     <Wrapper>
-      <Stack {...commonWrapperStyling}>
+      <Stack {...commonStackProps}>
         <chakra.label
           htmlFor='moneyIn'
           textAlign='center'

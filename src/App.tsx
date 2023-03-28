@@ -3,11 +3,7 @@ import { Outlet } from 'react-router-dom'
 
 import { Title } from './components'
 
-// import { useFxContext } from './contexts/fx'
-
 function App() {
-  // const { records, loading, errorOccured, ready } = useFxContext()
-
   return (
     <Container
       maxW='490px'
@@ -15,7 +11,6 @@ function App() {
       centerContent
     >
       <Title />
-
       <Outlet />
     </Container>
   )

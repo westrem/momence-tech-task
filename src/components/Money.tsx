@@ -3,6 +3,10 @@ import styled from 'styled-components'
 
 import arrow from '../assets/arrows_triple_down.png'
 
+// -------------------------------------------------------------------------------------------------------------------
+// Helper components
+// -------------------------------------------------------------------------------------------------------------------
+
 const Wrapper = styled.div`
   position: relative;
   overflow: visible;
@@ -18,6 +22,10 @@ const Wrapper = styled.div`
     background: transparent url(${arrow}) 0 0 no-repeat;
   }
 `
+
+// -------------------------------------------------------------------------------------------------------------------
+// Main component
+// -------------------------------------------------------------------------------------------------------------------
 
 interface Props {
   ready?: boolean
