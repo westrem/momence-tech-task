@@ -25,7 +25,7 @@
     "@chakra-ui/react": "^2.5.4",
     "@emotion/react": "^11.10.6",
     "@emotion/styled": "^11.10.6",
-    "@westrem/currency.info": "^0.1.1",
+    "@westrem/currency.info": "0.1.2",
     "axios": "^1.3.4",
     "date-fns": "^2.29.3",
     "framer-motion": "^10.9.1",

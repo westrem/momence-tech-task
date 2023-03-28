@@ -44,6 +44,7 @@ function MoneyInput(props: Props) {
           value={value}
           onChange={(evt) => onChange(evt.target.value)}
           id='moneyIn'
+          autoFocus
         />
         <InputRightAddon children='CZK' />
       </InputGroup>

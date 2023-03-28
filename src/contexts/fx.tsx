@@ -1,26 +1,31 @@
 import React, { useContext, PropsWithChildren } from 'react'
 
 import { useDailyFx } from '../queries'
+import { sortBy, keyBy } from '../utils/common'
 import { CNBExchangeRecord } from '../utils/types'
 
 interface FxContextValue {
   records: CNBExchangeRecord[]
+  recordsMap: Record<string | CNBExchangeRecord['code'], CNBExchangeRecord>
   default: boolean
   loading: boolean
   errorOccured: boolean
   ready: boolean
 }
 
+const EUR = {
+  country: 'EMU',
+  currency: 'euro',
+  amount: 1,
+  code: 'EUR' as const,
+  rate: 24.12, // Average exchange rate for past few months
+}
+
 const defaultFxContextValue = {
-  records: [
-    {
-      country: 'EMU',
-      currency: 'euro',
-      amount: 1,
-      code: 'EUR' as const,
-      rate: 24.12, // Average exchange rate for past few months
-    },
-  ],
+  records: [EUR],
+  recordsMap: {
+    EUR: EUR,
+  },
   default: true,
   loading: false,
   errorOccured: false,
@@ -36,6 +41,7 @@ function useFxContext() {
 
 function FxContextProvider(props: PropsWithChildren) {
   const { data, isLoading, isError, isSuccess } = useDailyFx()
+  const records = data ?? []
 
   return (
     <FxContext.Provider
@@ -46,7 +52,8 @@ function FxContextProvider(props: PropsWithChildren) {
               errorOccured: isError,
             }
           : {
-              records: data ?? [],
+              records: records.sort(sortBy('code')),
+              recordsMap: keyBy(records, 'code'),
               default: false,
               loading: isLoading,
               errorOccured: isError,

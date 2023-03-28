@@ -10,7 +10,7 @@ interface Props {
   value: string
 
   /**
-   * Funny text
+   * Info text
    */
   snippet: string
 }

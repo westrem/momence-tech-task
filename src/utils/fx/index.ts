@@ -17,7 +17,7 @@ import { CNBExchangeRecord } from '../types'
  */
 function exchangeCZK(valueCZK: number, fxRecord: CNBExchangeRecord): string {
   return ((valueCZK / fxRecord.rate) * fxRecord.amount).toFixed(
-    currenciesMap[fxRecord.code].defaultFractionDigits,
+    currenciesMap[fxRecord.code] ? currenciesMap[fxRecord.code].defaultFractionDigits : 2,
   )
 }
 

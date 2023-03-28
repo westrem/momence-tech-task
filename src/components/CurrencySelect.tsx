@@ -13,8 +13,8 @@ interface Props {
    * Selected currency
    * @example EUR
    */
-  value: CurrencyISOCode
-  onChange: (newValue: string) => void
+  value: CurrencyISOCode | ''
+  onChange: (newValue: CurrencyISOCode) => void
 }
 
 function CurrencySelect(props: Props) {
@@ -44,15 +44,18 @@ function CurrencySelect(props: Props) {
       <Select
         placeholder='Choose...'
         id='currency'
-        onChange={(evt) => onChange(evt.target.value)}
+        onChange={(evt) => onChange(evt.target.value as CurrencyISOCode)}
+        value={value}
       >
         {availableISOCurrencies.map((currencyISO) => {
-          const currencyInfo = currenciesMap[currencyISO]
+          const currencyInfo = currenciesMap[currencyISO] ?? {
+            displayName: currencyISO,
+            symbol: currencyISO,
+          }
           return (
             <option
               key={currencyISO}
               value={currencyISO}
-              selected={currencyISO === value}
             >
               {currencyInfo.displayName} / {currencyISO} ({currencyInfo.symbol})
             </option>

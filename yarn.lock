@@ -1574,10 +1574,10 @@
     magic-string "^0.27.0"
     react-refresh "^0.14.0"
 
-"@westrem/currency.info@^0.1.1":
-  version "0.1.1"
-  resolved "https://registry.yarnpkg.com/@westrem/currency.info/-/currency.info-0.1.1.tgz#c8bba95dfab95a35cea44ca3fab3198a260e9091"
-  integrity sha512-Euv4Ua1v6CB6nQzSYAPrEpdJ2b6UfgivDQQs//xr+p383iqFicDCL4Z5cKebDe7ykD3/NVS5GT5FHuyP16R+JQ==
+"@westrem/currency.info@0.1.2":
+  version "0.1.2"
+  resolved "https://registry.yarnpkg.com/@westrem/currency.info/-/currency.info-0.1.2.tgz#b08dbe79a8e8cdfdbc10bbe84f9073a92612c550"
+  integrity sha512-CYOUq5J87IdKRpoTwoXuxJhs0NmQMV3yTc1yyIzo377+Zi6t7e+VjTIURofAAJ81SqJX7t0kVY2TH3ttsCMiUg==
 
 "@westrem/eslint-config@^1.0.0":
   version "1.0.0"
