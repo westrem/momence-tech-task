@@ -1,3 +1,5 @@
+import { CurrencyISOCode } from '@westrem/currency.info'
+
 interface CNBExchangeRecord {
   /**
    * Name of the country/region where the currency is used
@@ -23,7 +25,7 @@ interface CNBExchangeRecord {
    * ISO 4217 currency code
    * @example EUR
    */
-  code: string
+  code: CurrencyISOCode
 
   /**
    * Exchange rate
