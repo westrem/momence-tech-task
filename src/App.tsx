@@ -3,10 +3,10 @@ import { Container } from '@chakra-ui/react'
 import { Title } from './components'
 import { Exchange, Rates } from './scenes'
 
-import { useDailyFx } from './queries'
+import { useFxContext } from './contexts/fx'
 
 function App() {
-  const { data, isLoading, isError, isSuccess } = useDailyFx()
+  const { records, loading, errorOccured, ready } = useFxContext()
 
   return (
     <Container
@@ -17,8 +17,8 @@ function App() {
     >
       <Title />
 
-      {/*<Exchange ready={isSuccess} />*/}
-      <Rates ready={isSuccess} />
+      <Exchange ready={ready} />
+      {/*<Rates ready={ready} />*/}
     </Container>
   )
 }

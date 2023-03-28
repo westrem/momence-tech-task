@@ -1,3 +1,4 @@
+import { CurrencyISOCode } from '@westrem/currency.info'
 import { CNBExchangeRecord } from '../types'
 
 const noRecords: CNBExchangeRecord[] = []
@@ -48,7 +49,7 @@ function parseRecord(record: string): CNBExchangeRecord {
     country,
     currency,
     amount: parseInt(amount, 10),
-    code,
+    code: code as CurrencyISOCode,
     rate: parseFloat(rate),
   }
 }
