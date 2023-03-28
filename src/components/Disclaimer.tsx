@@ -8,12 +8,14 @@ interface Props {
    * The date the exchange rates are from
    * @default now
    */
-  date?: Date | number
+  date?: Date | number | string | null
 }
 
 function Disclaimer(props: Props) {
-  const { date = Date.now() } = props
-  const formatted = format(date, dateFormat)
+  const { date } = props
+
+  const dateToUse = date ? (typeof date === 'string' ? new Date(date) : date) : Date.now()
+  const formatted = format(dateToUse, dateFormat)
 
   return (
     <Text

@@ -5,6 +5,7 @@ import parser, {
   isRecord,
   checkDateHeader,
   checkDescHeader,
+  parseDateHeader,
 } from '../../src/utils/parser'
 
 describe('Parser', () => {
@@ -75,6 +76,13 @@ describe('Parser', () => {
         expect(callback).to.throw('invalid record, mismatch in parts length')
       })
     })
+
+    describe('parseDateHeader', () => {
+      it('parses header correcly', () => {
+        let parsedHeader = parseDateHeader('24 Mar 2023 #60')
+        expect(parsedHeader).to.eq('24 Mar 2023')
+      })
+    })
   })
 
   context('main', () => {
@@ -89,28 +97,31 @@ describe('Parser', () => {
 
     // needs to be a function so we can access fixtures
     it('parses input correctly', function () {
-      const records = parser(this['dailyInput'])
+      const { records, date } = parser(this['dailyInput'])
 
+      expect(date).to.eq('24 Mar 2023')
       expect(records).to.be.an('array')
       expect(records).to.deep.eq(this['dailyOutput'])
 
-      const recordsWithHoles = parser(this['dailyInputWithHoles'])
+      const { records: recordsWithHoles } = parser(this['dailyInputWithHoles'])
 
       expect(recordsWithHoles).to.be.an('array')
       expect(recordsWithHoles).to.deep.eq(this['dailyOutputWithHoles'])
     })
 
-    it('returns empty array on no input', () => {
+    it('returns empty output on no input', () => {
       // @ts-ignore
-      let records = parser()
+      const { records, date } = parser()
 
+      expect(date).to.be.null
       expect(records).to.be.an('array')
       expect(records.length).to.eq(0)
 
-      records = parser('')
+      const { records: records2, date: date2 } = parser('')
 
-      expect(records).to.be.an('array')
-      expect(records.length).to.eq(0)
+      expect(date2).to.be.null
+      expect(records2).to.be.an('array')
+      expect(records2.length).to.eq(0)
     })
   })
 })

@@ -9,7 +9,7 @@ import { formatMoney } from '../utils/money'
 import { linkTo } from '../utils/routing'
 
 function Exchange() {
-  const { records, recordsMap, ready } = useFxContext()
+  const { records, recordsMap, ready, date } = useFxContext()
 
   const [czk, setCZK] = useState<string>('')
   const [currency, setCurrency] = useState<CurrencyISOCode | ''>('')
@@ -54,7 +54,7 @@ function Exchange() {
       />
 
       <InfoNav position='bottom'>
-        <Disclaimer />
+        <Disclaimer date={date} />
         <NavLink to={linkTo.rates()}>View rates</NavLink>
       </InfoNav>
     </Stack>

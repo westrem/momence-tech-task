@@ -2,6 +2,10 @@ import { CurrencyISOCode } from '@westrem/currency.info'
 import { CNBExchangeRecord } from '../types'
 
 const noRecords: CNBExchangeRecord[] = []
+const noOutput = {
+  records: noRecords,
+  date: null,
+}
 
 /**
  * Parses lines from input and trims any whitespace characters
@@ -20,6 +24,18 @@ function checkDateHeader(header: string) {
   const check = header.match(/^\d{1,2} [a-zA-z]{3} \d{4} #\d+$/)
 
   if (check === null) throw new TypeError('invalid date header')
+}
+
+/**
+ * Parses date header and returns date used
+ *
+ * Example:
+ * `24 Mar 2023 #60` → `24 Mar 2023`
+ *
+ * @param header
+ */
+function parseDateHeader(header: string): string {
+  return header.split('#')[0].trim()
 }
 
 /**
@@ -66,20 +82,27 @@ function isRecord(record: unknown): record is CNBExchangeRecord {
   )
 }
 
-function parse(input: string): CNBExchangeRecord[] {
-  if (!input) return noRecords
+interface ParserOutput {
+  records: CNBExchangeRecord[]
+  date: string | null
+}
+
+function parse(input: string): ParserOutput {
+  if (!input) return noOutput
 
   const lines = getLines(input)
 
   // Minimal number of lines must be 3 to have at least one record: two headers and one record
-  if (lines.length <= 3) return noRecords
+  if (lines.length <= 3) return noOutput
 
-  const [dateHeader, descHeader, ...records] = lines
+  const [dateHeader, descHeader, ...recordLines] = lines
 
   checkDateHeader(dateHeader)
   checkDescHeader(descHeader)
 
-  return records
+  const date = parseDateHeader(dateHeader)
+
+  const records = recordLines
     .map((record) => {
       if (!record) return false
 
@@ -92,7 +115,12 @@ function parse(input: string): CNBExchangeRecord[] {
       }
     })
     .filter(isRecord)
+
+  return {
+    date,
+    records,
+  }
 }
 
 export default parse
-export { parseRecord, isRecord, checkDateHeader, checkDescHeader }
+export { parseRecord, isRecord, checkDateHeader, checkDescHeader, parseDateHeader }

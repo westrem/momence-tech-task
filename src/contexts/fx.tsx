@@ -5,6 +5,7 @@ import { sortBy, keyBy } from '../utils/common'
 import { CNBExchangeRecord } from '../utils/types'
 
 interface FxContextValue {
+  date: string | null
   records: CNBExchangeRecord[]
   recordsMap: Record<string | CNBExchangeRecord['code'], CNBExchangeRecord>
   default: boolean
@@ -22,6 +23,7 @@ const EUR = {
 }
 
 const defaultFxContextValue = {
+  date: null,
   records: [EUR],
   recordsMap: {
     EUR,
@@ -42,7 +44,8 @@ function useFxContext() {
 function FxContextProvider(props: PropsWithChildren) {
   const { children } = props
   const { data, isLoading, isError, isSuccess } = useDailyFx()
-  const records = data ?? []
+  const records = data ? data.records : []
+  const date = data ? data.date : null
 
   return (
     <FxContext.Provider
@@ -53,6 +56,7 @@ function FxContextProvider(props: PropsWithChildren) {
               errorOccured: isError,
             }
           : {
+              date,
               records: records.sort(sortBy('code')),
               recordsMap: keyBy(records, 'code'),
               default: false,

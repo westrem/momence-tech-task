@@ -4,7 +4,7 @@ import { useFxContext } from '../contexts/fx'
 import { linkTo } from '../utils/routing'
 
 function Rates() {
-  const { records, ready } = useFxContext()
+  const { records, ready, date } = useFxContext()
 
   return (
     <>
@@ -15,7 +15,7 @@ function Rates() {
         >
           Back to Exchange
         </NavLink>
-        <Disclaimer />
+        <Disclaimer date={date} />
       </InfoNav>
 
       <FxTable
