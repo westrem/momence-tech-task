@@ -1,6 +1,7 @@
 24 Mar 2023 #60
 Country|Currency|Amount|Code|Rate
 Australia|dollar|1|AUD|14.622
+
 Bulgaria|lev|1|BGN|12.109
 Canada|dollar|1|CAD|15.975
 China|renminbi|1|CNY|3.208
