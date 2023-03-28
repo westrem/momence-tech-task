@@ -33,7 +33,7 @@ function Exchange() {
     >
       <Stack
         spacing={10}
-        maxW='310px'
+        maxW='350px'
       >
         <MoneyInput
           loading={!ready}

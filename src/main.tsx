@@ -5,7 +5,7 @@ import { createBrowserRouter, RouterProvider } from 'react-router-dom'
 
 import { QueryClient, QueryClientProvider } from 'react-query'
 
-import { ChakraProvider } from '@chakra-ui/react'
+import { ChakraProvider, extendTheme } from '@chakra-ui/react'
 
 import { FxContextProvider } from './contexts/fx'
 import { Exchange, Rates } from './scenes'
@@ -35,13 +35,24 @@ const router = createBrowserRouter([
 ])
 
 // ----------------------------------------------------------------------------------------
+// chakra-ui
+// ----------------------------------------------------------------------------------------
+
+const theme = extendTheme({
+  fonts: {
+    heading: `Inter, system-ui, Avenir, Helvetica, Arial, sans-serif`,
+    body: `Inter, system-ui, Avenir, Helvetica, Arial, sans-serif`,
+  },
+})
+
+// ----------------------------------------------------------------------------------------
 // react mounting
 // ----------------------------------------------------------------------------------------
 
 ReactDOM.createRoot(document.getElementById('root') as HTMLElement).render(
   <React.StrictMode>
     <QueryClientProvider client={queryClient}>
-      <ChakraProvider>
+      <ChakraProvider theme={theme}>
         <FxContextProvider>
           <RouterProvider router={router} />
         </FxContextProvider>

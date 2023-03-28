@@ -77,6 +77,8 @@ The are two types of test available:
 - **unit** - tests main functions like parsing API response or Fx conversion
 - **e2e** - tests actual application
 
+> 🔥 Please make sure the command `yarn dev` is running when running tests (if they include e2e part). Unit tests can be run independently of whether the app is running or not
+
 To run all tests:
 
 ```
@@ -111,7 +113,7 @@ If for any reason you are unable to run tests, check out the [terminal results (
 
 The code is ready to be scaled to fully-fledged application with proper directory structure, routing utilities, etc.
 
-API has queries ready for Yearly data from CNB.cz as well, so next step could be incorporate Yearly parser and a page showing these data.
+API has queries ready for Yearly data from CNB.cz as well, so next step could be to incorporate Yearly parser and a page showing these data.
 
 Daily API is similarly ready to accept a specific `date` - we could add a date picker in the UI and allow user to check past exchange rates.
 

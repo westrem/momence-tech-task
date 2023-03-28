@@ -11,7 +11,7 @@ import parser, {
 describe('Parser', () => {
   context('internals', () => {
     describe('checkDateHeader', () => {
-      it('passed on correct input', () => {
+      it('passes on correct input', () => {
         checkDateHeader('24 Mar 2023 #60')
       })
 
@@ -24,7 +24,7 @@ describe('Parser', () => {
     })
 
     describe('checkDescHeader', () => {
-      it('passed on correct input', () => {
+      it('passes on correct input', () => {
         checkDescHeader('Country|Currency|Amount|Code|Rate')
       })
 
