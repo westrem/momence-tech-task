@@ -1,20 +1,22 @@
 import { useQuery } from 'react-query'
-import { set, isAfter } from 'date-fns'
+import { format, set, isAfter } from 'date-fns'
 
-import { now, todayFormatted } from '../utils/date'
+import { dateFormat } from '../utils/date'
 import parser from '../utils/parser'
 
 import * as CNB from '../api/cnb'
 
-const todayAt230PM = set(now, {
-  hours: 14,
-  minutes: 30,
-  seconds: 0,
-  milliseconds: 0,
-})
-const isAfter230PM = isAfter(now, todayAt230PM)
-
 function useDailyFx(date?: string) {
+  const now = Date.now()
+  const todayFormatted = format(now, dateFormat)
+  const todayAt230PM = set(now, {
+    hours: 14,
+    minutes: 30,
+    seconds: 0,
+    milliseconds: 0,
+  })
+  const isAfter230PM = isAfter(now, todayAt230PM)
+
   // CNB updates Fx rate within the day after 2:30PM
   // so if we are querying data for current date, we need to differentiate the cache key
   // for calls before and after 2:30PM to not end up with stale data

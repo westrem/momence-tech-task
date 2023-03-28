@@ -1,7 +1,7 @@
 import { format } from 'date-fns'
 import { Text } from '@chakra-ui/react'
 
-import { now, dateFormat } from '../utils/date'
+import { dateFormat } from '../utils/date'
 
 interface Props {
   /**
@@ -12,7 +12,7 @@ interface Props {
 }
 
 function Disclaimer(props: Props) {
-  const { date = now } = props
+  const { date = Date.now() } = props
   const formatted = format(date, dateFormat)
 
   return (
