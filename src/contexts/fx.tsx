@@ -24,7 +24,7 @@ const EUR = {
 const defaultFxContextValue = {
   records: [EUR],
   recordsMap: {
-    EUR: EUR,
+    EUR,
   },
   default: true,
   loading: false,
@@ -40,6 +40,7 @@ function useFxContext() {
 }
 
 function FxContextProvider(props: PropsWithChildren) {
+  const { children } = props
   const { data, isLoading, isError, isSuccess } = useDailyFx()
   const records = data ?? []
 
@@ -61,7 +62,7 @@ function FxContextProvider(props: PropsWithChildren) {
             }
       }
     >
-      {props.children}
+      {children}
     </FxContext.Provider>
   )
 }

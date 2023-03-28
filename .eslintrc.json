@@ -53,7 +53,7 @@
     "no-unreachable-loop": "error",
     "default-case-last": "error",
     "eqeqeq": ["error", "always"],
-    "id-length": ["error", { "min": 3, "exceptions": ["i", "id", "as", "cx", "e"] }],
+    "id-length": ["error", { "min": 2, "exceptions": ["i", "e"] }],
     "no-array-constructor": "error",
     "no-console": "error",
     "no-alert": "error",

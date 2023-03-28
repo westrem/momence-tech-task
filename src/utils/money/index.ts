@@ -4,7 +4,7 @@ import { currenciesMap, CurrencyISOCode } from '@westrem/currency.info'
 const formatMoney = (
   valueInMajorUnits: number,
   currencyISOCode: CurrencyISOCode,
-  // @ts-ignore
+  // @ts-expect-error
   locale: string = window.navigator.userLanguage ?? window.navigator.language,
 ) =>
   Intl.NumberFormat(locale, {

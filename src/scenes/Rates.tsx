@@ -1,20 +1,29 @@
+import { Link } from '@chakra-ui/react'
+import { Link as ReactLink } from 'react-router-dom'
+
 import { FxTable, Disclaimer, InfoNav } from '../components'
 
-import daily from '../../cypress/fixtures/daily.json'
+import { useFxContext } from '../contexts/fx'
+import { linkTo } from '../utils/routing'
 
-import { BaseSceneProps } from './types'
-
-function Rates(props: BaseSceneProps) {
-  const { ready = false } = props
+function Rates() {
+  const { records, ready } = useFxContext()
 
   return (
     <>
       <InfoNav position='top'>
+        <Link
+          as={ReactLink}
+          to={linkTo.root()}
+          fontSize='xs'
+        >
+          Back to Exchange
+        </Link>
         <Disclaimer />
       </InfoNav>
 
       <FxTable
-        records={daily}
+        records={records}
         loading={!ready}
       />
     </>

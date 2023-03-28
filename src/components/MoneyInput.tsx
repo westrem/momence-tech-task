@@ -46,7 +46,7 @@ function MoneyInput(props: Props) {
           id='moneyIn'
           autoFocus
         />
-        <InputRightAddon children='CZK' />
+        <InputRightAddon>CZK</InputRightAddon>
       </InputGroup>
     </Stack>
   )

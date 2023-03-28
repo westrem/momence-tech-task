@@ -8,6 +8,7 @@ import { CNBExchangeRecord } from '../utils/types'
 // Helper components
 // -------------------------------------------------------------------------------------------------------------------
 function TableWrapper(props: PropsWithChildren) {
+  const { children } = props
   return (
     <Box
       p={3}
@@ -27,7 +28,7 @@ function TableWrapper(props: PropsWithChildren) {
               <Th isNumeric>Rate</Th>
             </Tr>
           </Thead>
-          <Tbody>{props.children}</Tbody>
+          <Tbody>{children}</Tbody>
         </Table>
       </TableContainer>
     </Box>

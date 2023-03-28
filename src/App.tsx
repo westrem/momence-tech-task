@@ -1,7 +1,7 @@
 import { Container } from '@chakra-ui/react'
+import { Outlet } from 'react-router-dom'
 
 import { Title } from './components'
-import { Exchange, Rates } from './scenes'
 
 // import { useFxContext } from './contexts/fx'
 
@@ -16,8 +16,7 @@ function App() {
     >
       <Title />
 
-      <Exchange />
-      {/*<Rates ready={ready} />*/}
+      <Outlet />
     </Container>
   )
 }
