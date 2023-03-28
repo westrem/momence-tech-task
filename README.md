@@ -28,6 +28,12 @@
 
 You can see [design I prepared for the task at in Figma](https://www.figma.com/file/OOucBjNyK455E2B8SABgA4/Momence-Tech-Task?node-id=0%3A1&t=ATHeg6dXMhffxYgE-1) or check the exported pages in [/design](./design) folder.
 
+# Live preview
+
+[![Netlify Status](https://api.netlify.com/api/v1/badges/38e0f4bf-ab37-4f9e-bb25-00bc89a97a97/deploy-status)](https://app.netlify.com/sites/timely-kataifi-6ce3d2/deploys)
+
+You can see the app deployed live at [https://timely-kataifi-6ce3d2.netlify.app](https://timely-kataifi-6ce3d2.netlify.app)
+
 # Install
 
 In your terminal, run following commands:
