@@ -48,6 +48,7 @@ function Money(props: Props) {
         <Heading
           as='h2'
           size='3xl'
+          id='converted'
         >
           {value}
         </Heading>

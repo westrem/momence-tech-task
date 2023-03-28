@@ -136,7 +136,6 @@
     ],
     "@typescript-eslint/no-unused-vars": 0,
     "@typescript-eslint/no-unnecessary-boolean-literal-compare": "error",
-    "@typescript-eslint/no-unnecessary-condition": "error",
     "@typescript-eslint/prefer-nullish-coalescing": "error",
     "@typescript-eslint/prefer-optional-chain": "error",
     "@typescript-eslint/prefer-string-starts-ends-with": "error",

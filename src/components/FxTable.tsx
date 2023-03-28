@@ -7,8 +7,8 @@ import { CNBExchangeRecord } from '../utils/types'
 // -------------------------------------------------------------------------------------------------------------------
 // Helper components
 // -------------------------------------------------------------------------------------------------------------------
-function TableWrapper(props: PropsWithChildren) {
-  const { children } = props
+function TableWrapper(props: PropsWithChildren<{ id: string }>) {
+  const { children, id } = props
   return (
     <Box
       p={3}
@@ -20,6 +20,7 @@ function TableWrapper(props: PropsWithChildren) {
         <Table
           variant='unstyled'
           size='md'
+          id={id}
         >
           <Thead>
             <Tr>
@@ -69,7 +70,7 @@ function FxTable(props: Props) {
 
   if (loading)
     return (
-      <TableWrapper>
+      <TableWrapper id='FxTable_loading'>
         <SkeletonRow />
         <SkeletonRow />
         <SkeletonRow />
@@ -77,7 +78,7 @@ function FxTable(props: Props) {
     )
 
   return (
-    <TableWrapper>
+    <TableWrapper id='FxTable_loaded'>
       {records.map((record) => (
         <Tr key={record.code}>
           <Td>{record.code}</Td>

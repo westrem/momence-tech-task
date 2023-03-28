@@ -16,8 +16,9 @@
     "lint:eslint": "./node_modules/.bin/eslint src --ignore-path .gitignore --ext .ts,.tsx --cache --cache-location .cache/eslint/ --max-warnings 0",
     "fix:eslint": "./node_modules/.bin/eslint src/** --ignore-path .gitignore --ext .ts,.tsx --cache --cache-location .cache/eslint/ --fix",
     "cypress:open": "./node_modules/.bin/cypress open",
-    "cypress:run": "./node_modules/.bin/cypress run",
-    "test:ci": "yarn cypress:run"
+    "cypress:run:unit": "./node_modules/.bin/cypress run -C cypress.config.unit.ts",
+    "cypress:run:e2e": "./node_modules/.bin/cypress run -C cypress.config.e2e.ts",
+    "test:ci": "yarn cypress:run:unit"
   },
   "author": "Jan Jadud <dev@gojadud.com>",
   "license": "MIT",
