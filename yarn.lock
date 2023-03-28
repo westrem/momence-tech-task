@@ -1618,14 +1618,6 @@
   resolved "https://registry.yarnpkg.com/@westrem/currency.info/-/currency.info-0.1.2.tgz#b08dbe79a8e8cdfdbc10bbe84f9073a92612c550"
   integrity sha512-CYOUq5J87IdKRpoTwoXuxJhs0NmQMV3yTc1yyIzo377+Zi6t7e+VjTIURofAAJ81SqJX7t0kVY2TH3ttsCMiUg==
 
-"@westrem/eslint-config@^1.0.0":
-  version "1.0.0"
-  resolved "https://registry.yarnpkg.com/@westrem/eslint-config/-/eslint-config-1.0.0.tgz#dea859407311ce0f10b694f4caec6b0b8fd21403"
-  integrity sha512-NpoJJpZH1ek/iKuB56FauJeoPfOCHyySOBS4am2l/9fjzfVErq8QWPj5Jhmk1JftUTE2/wlB2Mo306XZw+ToAQ==
-  dependencies:
-    "@typescript-eslint/parser" "^5.56.0"
-    eslint-config-prettier "^8.8.0"
-
 "@westrem/prettier-config@1.1.0":
   version "1.1.0"
   resolved "https://registry.yarnpkg.com/@westrem/prettier-config/-/prettier-config-1.1.0.tgz#2703ec690e8c2953dd35afd5c7225179bda6f8ee"

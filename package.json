@@ -15,10 +15,10 @@
     "lint:ts": "./node_modules/.bin/tsc --noemit",
     "lint:eslint": "./node_modules/.bin/eslint src --ignore-path .gitignore --ext .ts,.tsx --cache --cache-location .cache/eslint/ --max-warnings 0",
     "fix:eslint": "./node_modules/.bin/eslint src/** --ignore-path .gitignore --ext .ts,.tsx --cache --cache-location .cache/eslint/ --fix",
-    "cypress:open": "./node_modules/.bin/cypress open",
-    "cypress:run:unit": "./node_modules/.bin/cypress run -C cypress.config.unit.ts",
-    "cypress:run:e2e": "./node_modules/.bin/cypress run -C cypress.config.e2e.ts",
-    "test:ci": "yarn cypress:run:unit"
+    "cypress:open:e2e": "./node_modules/.bin/cypress open -C cypress.config.e2e.ts",
+    "test:run:unit": "./node_modules/.bin/cypress run -C cypress.config.unit.ts",
+    "test:run:e2e": "./node_modules/.bin/cypress run -C cypress.config.e2e.ts",
+    "test:ci": "npm-run-all test:run:**"
   },
   "author": "Jan Jadud <dev@gojadud.com>",
   "license": "MIT",
@@ -44,7 +44,6 @@
     "@typescript-eslint/eslint-plugin": "^5.56.0",
     "@typescript-eslint/parser": "^5.56.0",
     "@vitejs/plugin-react": "^3.1.0",
-    "@westrem/eslint-config": "^1.0.0",
     "@westrem/prettier-config": "1.1.0",
     "cypress": "^12.8.1",
     "eslint": "8.22.0",
